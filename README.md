@@ -16,11 +16,14 @@
 | File or folder | What to edit |
 | --- | --- |
 | `main.tex` | Set your cover details and choose which chapters to include. Replace the example Ethel logo via `\thesislogo`, or leave that field empty. |
-| `front-matter/` | Write your abstract and acknowledgements. The PDF starts with the cover and contents, followed by the abstract and acknowledgements. |
+| `front-matter/` | Write your abstract and acknowledgements. Acknowledgements come before the optional table of contents. The abstract follows. |
 | `chapters/` | Draft your thesis one chapter at a time. Use the Methods file for an example of numbered headings. |
 | `references.bib` | Add your sources and replace the example citations in Related Work. |
 | `figures/` | Store images and edit the sample PGFPlots chart. The original Ethel artwork is `figures/ethel.svg`. |
 | `examples/` | Find the two table examples and the optional statement on AI assistance. |
+
+The table of contents is enabled by default. If your programme does not
+require it, comment out `\tableofcontents` in `main.tex`.
 
 ## While drafting
 
