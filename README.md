@@ -31,10 +31,28 @@ for the overall length and adjust each part to the evidence it needs.
 | Subsection (`\subsection`) | One aspect of the section, such as how you prepared the data. | Several paragraphs, roughly ½–2 pages |
 | Subsubsection (`\subsubsection`) | A focused detail that readers may need to find, such as how you handled missing observations. | About 1–3 paragraphs |
 
+Start with paragraphs. Add subsections when a section contains two or more
+distinct topics that readers would benefit from finding by name. If only one
+topic needs a heading or the material fits in a short paragraph, keep it in
+the parent section. Apply the same test before adding subsubsections. For
+example, Methods can give data preparation and analysis their own subsections
+when both need explanation. A brief note on missing data can stay in the data
+preparation paragraph.
+
 See the nested example in `chapters/methods.tex`. Subsubsections are
 numbered in the text. To include them in the table of contents, change
 `tocdepth` from 2 to 3 in `main.tex`. The page margins for the thesis text
-are set there with `\newgeometry{margin=26mm}`.
+are set there by the second `\newgeometry` command.
+
+## Track draft tasks
+
+The `todonotes` package is enabled in `main.tex`. Methods shows
+`\todo{Check fit.}` for a short margin note and
+`\todo[inline]{Verify that the methods give enough detail to reproduce the analysis.}`
+for a longer note in the text. Uncomment `\listoftodos` after the table of
+contents if you want a checklist. Before submission, resolve your notes and
+uncomment `\PassOptionsToPackage{disable}{todonotes}` to suppress all draft
+notes and the checklist in the PDF.
 
 ## Plot data with TikZ and PGFPlots
 

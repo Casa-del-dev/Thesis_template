@@ -6,6 +6,10 @@
 \usepackage[pass]{geometry}
 \usepackage{titlesec}
 \usepackage{pgfplots}
+% Uncomment the next line to hide all draft notes for submission.
+% \PassOptionsToPackage{disable}{todonotes}
+\setlength{\marginparwidth}{20mm}
+\usepackage[textsize=scriptsize]{todonotes}
 \usepackage[authoryear,round]{natbib}
 \usepackage[nottoc,notlof,notlot]{tocbibind}
 \usepackage{hyperref}
@@ -17,6 +21,7 @@
 \setcounter{tocdepth}{2}
 
 % Keep chapter and section headings close to the text they introduce.
+\titleformat{\chapter}[hang]{\normalfont\huge\bfseries}{\thechapter.}{.5em}{}
 \titlespacing*{\chapter}{0pt}{8pt}{20pt}
 \titlespacing*{\section}{0pt}{2.5ex plus .5ex minus .2ex}{1ex}
 \titlespacing*{\subsection}{0pt}{2ex plus .5ex minus .2ex}{.8ex}
@@ -60,7 +65,7 @@
 \hypersetup{pageanchor=true}
 
 % Apply the thesis text margins after the title page.
-\newgeometry{margin=26mm}
+\newgeometry{margin=26mm,marginparwidth=20mm,marginparsep=3mm}
 \raggedbottom
 \hypersetup{hidelinks}
 \pagenumbering{roman}
@@ -68,6 +73,7 @@
 \input{front-matter/acknowledgements}
 
 \tableofcontents
+% \listoftodos % Uncomment to collect draft notes in one place.
 \clearpage
 
 \pagenumbering{arabic}
