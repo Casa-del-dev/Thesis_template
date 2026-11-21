@@ -4,18 +4,30 @@
 \usepackage{graphicx}
 \usepackage{hyperref}
 
+% Replace these placeholders with your submission details.
 \newcommand{\thesistitle}{Thesis Title}
-\newcommand{\thesisauthor}{Eren Homburg}
-\newcommand{\thesisdate}{November 2026}
+\newcommand{\thesisauthor}{Student Name}
+\newcommand{\thesisprogramme}{Degree Programme}
+\newcommand{\thesissupervisor}{Supervisor Name}
+\newcommand{\thesisdate}{Month Year}
 
-\title{\thesistitle}
-\author{\thesisauthor}
-\date{\thesisdate}
 \hypersetup{pdftitle={\thesistitle},pdfauthor={\thesisauthor}}
 
 \begin{document}
 \hypersetup{pageanchor=false}
-\maketitle
+\begin{titlepage}
+  \centering
+  \vspace*{\fill}
+  {\Large \thesisprogramme\par}
+  \vspace{1.5cm}
+  {\Huge\bfseries \thesistitle\par}
+  \vspace{1.5cm}
+  {\Large \thesisauthor\par}
+  \vspace{1cm}
+  {\large Supervisor: \thesissupervisor\par}
+  \vspace{\fill}
+  {\large \thesisdate\par}
+\end{titlepage}
 \hypersetup{pageanchor=true}
 
 \pagenumbering{roman}
@@ -32,6 +44,9 @@ Summarize the research question, approach, main findings, and conclusions.
 \include{chapters/results}
 \include{chapters/discussion}
 \include{chapters/conclusion}
+
+% If applicable, adapt the example to your programme's disclosure requirements.
+% \input{examples/ai-assistance}
 
 \bibliographystyle{plain}
 \bibliography{references}
