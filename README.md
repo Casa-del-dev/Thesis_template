@@ -9,12 +9,44 @@
    choose `main.tex`. Use pdfLaTeX as the compiler and select **Recompile**.
 3. Fill in the five title-page fields near the top of `main.tex`. Write your
    abstract there and draft each chapter in `chapters/`.
-4. Add your sources to `references.bib`. Replace the sample citation in
-   `chapters/background.tex` and remove its sample bibliography entry when
-   you no longer need it. Use `\cite{key}` to cite an entry.
+4. Replace the sample citations in `chapters/background.tex` and the plot
+   in `chapters/results.tex` with your own material.
 
-Check your programme's instructions for the required title page, chapter
-structure, citation style, and declarations before submitting.
+## Organize your chapters
+
+Use these ranges as drafting estimates. Follow your programme's requirements
+for the overall length and adjust each part to the evidence it needs.
+
+| Heading | What belongs there | Drafting estimate |
+| --- | --- | --- |
+| Section (`\section`) | A major topic or step in the chapter's argument, such as how you collected and analyzed your data. | About 1–3 pages |
+| Subsection (`\subsection`) | One aspect of the section, such as how you prepared the data. | Several paragraphs, roughly ½–2 pages |
+| Subsubsection (`\subsubsection`) | A focused detail that readers may need to find, such as how you handled missing observations. | About 1–3 paragraphs |
+
+See the nested example in `chapters/methods.tex`. Subsubsections are
+numbered in the text. To include them in the table of contents, change
+`tocdepth` from 2 to 3 in `main.tex`. The page margins for the thesis text
+are set there with `\newgeometry{margin=26mm}`.
+
+## Plot data with TikZ and PGFPlots
+
+Open `figures/example-trend.tex` to edit the example coordinates and axis
+labels. For measured data, you can also upload a CSV with column headers
+and replace the plot command with
+`\addplot table[x=trial,y=response_ms,col sep=comma] {figures/results.csv};`.
+Use a descriptive caption, label both axes, and include units where applicable.
+Refer to the plot from the text with `Figure~\ref{fig:example-trend}`.
+
+## Cite and manage sources
+
+Add your records to `references.bib`. Use `\citet{key}` when the author is
+part of the sentence and `\citep{key}` for a citation in parentheses. The
+file includes examples for a journal article, an institutional web page,
+and a book. Use a bare identifier in `doi` and a full address in `url`.
+BibTeX generates the alphabetical reference list from the sources you cite.
+Check your programme's required citation style before submission. If you are
+updating an older Overleaf copy, use **Recompile from scratch** once to
+regenerate the bibliography in the new style.
 
 ## Optional example for courses using Ethel
 

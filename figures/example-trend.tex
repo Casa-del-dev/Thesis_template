@@ -1,0 +1,15 @@
+\begin{tikzpicture}
+  \begin{axis}[
+    width=.85\linewidth,
+    height=5.5cm,
+    xlabel={Trial},
+    ylabel={Response time (ms)},
+    xtick={1,2,3,4,5},
+    ymajorgrids,
+    grid style={gray!25},
+  ]
+    \addplot[blue!65!black, thick, mark=*] coordinates {
+      (1,340) (2,325) (3,331) (4,309) (5,300)
+    };
+  \end{axis}
+\end{tikzpicture}
