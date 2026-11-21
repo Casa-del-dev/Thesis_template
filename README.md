@@ -50,8 +50,9 @@ To load measured data, upload a CSV with headers and replace the plot command
 with `\addplot table[x=trial,y=response_ms,col sep=comma] {figures/results.csv};`.
 Use readable axis labels and units.
 
-**Citations.** Use `\citet{key}` to name an author in the sentence and
-`\citep{key}` for a citation in parentheses. Add records to `references.bib`.
+**Citations.** Add sources to `references.bib` and cite them with
+`\cite{key}`. This prints a bracketed number such as [1], which links to the
+matching numbered entry in References. Use `\cite{key1,key2}` to group sources.
 The bibliography includes the sources cited in the text. Use **Recompile from
 scratch** if an older Overleaf copy still shows stale citations.
 
