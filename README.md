@@ -7,12 +7,20 @@
 2. In Overleaf, choose **New Project → Upload Project** and upload the ZIP.
    This creates your own project. If Overleaf asks for the main document,
    choose `main.tex`. Use pdfLaTeX as the compiler and select **Recompile**.
-3. Fill in the five title-page fields near the top of `main.tex`. Write your
-   abstract there and draft each chapter in `chapters/`.
+3. Set your cover details in `main.tex`. The cover uses the supplied Ethel
+   logo as an example. Set `\thesislogo` to your own PDF or leave it empty
+   to omit the logo. The source artwork is `figures/ethel.svg`.
+   Write your abstract in `front-matter/abstract.tex` and acknowledgements
+   in `front-matter/acknowledgements.tex`.
 4. Replace the sample citations in `chapters/background.tex` and the plot
    in `chapters/results.tex` with your own material.
 
 ## Organize your chapters
+
+The sample outline follows a design-and-evaluation project. Adapt it to your
+thesis. You can remove or combine the Design, Implementation, User study,
+and Future Work parts if they do not fit. Use the appendix for supplementary
+material referenced from the main text.
 
 Use these ranges as drafting estimates. Follow your programme's requirements
 for the overall length and adjust each part to the evidence it needs.

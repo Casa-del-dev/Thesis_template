@@ -1,6 +1,7 @@
 \documentclass[11pt,a4paper,oneside]{report}
 
 \usepackage[T1]{fontenc}
+\usepackage{lmodern}
 \usepackage{graphicx}
 \usepackage[pass]{geometry}
 \usepackage{titlesec}
@@ -28,26 +29,34 @@
 \newcommand{\thesistitle}{Thesis Title}
 \newcommand{\thesisauthor}{Student Name}
 \newcommand{\thesisprogramme}{Degree Programme}
+\newcommand{\thesisdepartment}{Department Name}
+\newcommand{\thesisgroup}{Research Group}
+\newcommand*{\thesislogo}{figures/ethel.pdf} % Leave empty to omit the logo.
 \newcommand{\thesissupervisor}{Supervisor Name}
 \newcommand{\thesisdate}{Month Year}
 
 \hypersetup{pdftitle={\thesistitle},pdfauthor={\thesisauthor}}
 
+% Front-matter prose sits in a narrow block at the center of the page.
+\newenvironment{frontmatterpage}[1]{%
+  \clearpage
+  \vspace*{\fill}
+  \begin{center}\begin{minipage}{.72\textwidth}
+  \phantomsection
+  \addcontentsline{toc}{chapter}{#1}
+  {\centering\Large\bfseries #1\par}
+  \medskip
+  \noindent\ignorespaces
+}{%
+  \end{minipage}\end{center}
+  \vspace*{\fill}
+  \clearpage
+}
+
 \begin{document}
 \hypersetup{pageanchor=false}
-\begin{titlepage}
-  \centering
-  \vspace*{\fill}
-  {\Large \thesisprogramme\par}
-  \vspace{1.5cm}
-  {\Huge\bfseries \thesistitle\par}
-  \vspace{1.5cm}
-  {\Large \thesisauthor\par}
-  \vspace{1cm}
-  {\large Supervisor: \thesissupervisor\par}
-  \vspace{\fill}
-  {\large \thesisdate\par}
-\end{titlepage}
+\newgeometry{margin=28mm}
+\input{front-matter/title-page}
 \hypersetup{pageanchor=true}
 
 % Apply the thesis text margins after the title page.
@@ -55,8 +64,8 @@
 \raggedbottom
 \hypersetup{hidelinks}
 \pagenumbering{roman}
-\chapter*{Abstract}
-Summarize the research question, approach, main findings, and conclusions.
+\input{front-matter/abstract}
+\input{front-matter/acknowledgements}
 
 \tableofcontents
 \clearpage
@@ -64,9 +73,12 @@ Summarize the research question, approach, main findings, and conclusions.
 \pagenumbering{arabic}
 \include{chapters/introduction}
 \include{chapters/background}
+\include{chapters/design}
+\include{chapters/implementation}
 \include{chapters/methods}
 \include{chapters/results}
 \include{chapters/discussion}
+\include{chapters/future-work}
 \include{chapters/conclusion}
 
 % If applicable, adapt the example to your programme's disclosure requirements.
@@ -74,4 +86,7 @@ Summarize the research question, approach, main findings, and conclusions.
 
 \bibliographystyle{plainnat}
 \bibliography{references}
+
+\appendix
+\include{chapters/appendix}
 \end{document}
