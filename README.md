@@ -20,14 +20,15 @@
 | `chapters/` | Draft your thesis one chapter at a time. Use the Methods file for an example of numbered headings. |
 | `references.bib` | Add your sources and replace the example citations in Related Work. |
 | `figures/` | Store images and edit the sample PGFPlots chart. The original Ethel artwork is `figures/ethel.svg`. |
-| `examples/` | Find the two table examples and the optional statement on AI assistance. |
+| `examples/` | Find the two table examples used in Results. |
 
 The table of contents is enabled by default. If your programme does not
 require it, comment out `\tableofcontents` in `main.tex`.
 
 ## While drafting
 
-**Structure.** Use a subsection when two or more distinct topics each need
+**Structure.** Open a section with a short paragraph explaining its purpose
+and what the subsections will cover. Use a subsection when two or more distinct topics each need
 their own explanation and heading. Keep the hierarchy shallow and avoid
 subsubsections by default. The sample outline fits a design-and-evaluation
 project. Combine or remove chapters and sections that your research does
@@ -39,6 +40,10 @@ use `&` to separate cells and `\\` to end rows. Give each table a caption,
 put its `\label` after the caption, and cite it in the text with
 `Table~\ref{tab:example-values}`. Replace the examples or remove the
 `\input{examples/tables}` line in `chapters/results.tex`.
+
+**Images.** The Design chapter shows how to include a PDF with
+`\includegraphics`, a caption, and a cross-reference. At the size the
+image appears on the page, aim for labels at least as large as the caption.
 
 **Plots.** Edit the coordinates and axis labels in `figures/example-trend.tex`.
 To load measured data, upload a CSV with headers and replace the plot command
@@ -63,10 +68,7 @@ reviewer. Uncomment `\listoftodos` to collect feedback in a single list.
 - Resolve reviewer comments and uncomment
   `\PassOptionsToPackage{disable}{todonotes}` in `main.tex` to hide draft
   notes and the checklist. Compile and read through the final PDF.
-- Follow your programme's guidance on disclosing AI assistance. For courses
-  using [Ethel](https://ai.ethz.ch/education/ai4edu/Ethel.html), the optional
-  `examples/ai-assistance.tex` shows how to describe the task and what you
-  checked yourself. Edit the example before enabling it in `main.tex`.
+- Follow your programme's guidance on disclosing AI assistance.
 
 ## Maintain the template
 
