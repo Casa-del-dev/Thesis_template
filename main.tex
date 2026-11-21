@@ -1,14 +1,38 @@
-\documentclass{article}
-\usepackage{graphicx} % Required for inserting images
+\documentclass[11pt,a4paper,oneside]{report}
 
-\title{Thesis_template}
-\author{Eren Homburg}
-\date{November 2026}
+\usepackage[T1]{fontenc}
+\usepackage{graphicx}
+\usepackage{hyperref}
+
+\newcommand{\thesistitle}{Thesis Title}
+\newcommand{\thesisauthor}{Eren Homburg}
+\newcommand{\thesisdate}{November 2026}
+
+\title{\thesistitle}
+\author{\thesisauthor}
+\date{\thesisdate}
+\hypersetup{pdftitle={\thesistitle},pdfauthor={\thesisauthor}}
 
 \begin{document}
-
+\hypersetup{pageanchor=false}
 \maketitle
+\hypersetup{pageanchor=true}
 
-\section{Introduction}
+\pagenumbering{roman}
+\chapter*{Abstract}
+Summarize the research question, approach, main findings, and conclusions.
 
+\tableofcontents
+\clearpage
+
+\pagenumbering{arabic}
+\include{chapters/introduction}
+\include{chapters/background}
+\include{chapters/methods}
+\include{chapters/results}
+\include{chapters/discussion}
+\include{chapters/conclusion}
+
+\bibliographystyle{plain}
+\bibliography{references}
 \end{document}
