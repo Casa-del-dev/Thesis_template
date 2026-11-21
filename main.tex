@@ -34,7 +34,6 @@
 \titlespacing*{\subsection}{0pt}{2ex plus .5ex minus .2ex}{.8ex}
 \titlespacing*{\subsubsection}{0pt}{1.5ex plus .3ex minus .2ex}{.6ex}
 
-\setlength{\bibsep}{.4\baselineskip}
 \newcommand{\doi}[1]{\href{https://doi.org/#1}{doi:\,\nolinkurl{#1}}}
 
 % Replace these placeholders with your submission details.
@@ -94,8 +93,14 @@
 \include{chapters/future-work}
 \include{chapters/conclusion}
 
-\bibliographystyle{plainnat}
+% Compact reference-list typography from the CVF author kit.
+\begingroup
+\small
+\renewcommand{\bibname}{References}
+\setlength{\bibsep}{1pt plus 1pt minus 1pt}
+\bibliographystyle{thesis-iccv}
 \bibliography{references}
+\endgroup
 
 \appendix
 \include{chapters/appendix}
