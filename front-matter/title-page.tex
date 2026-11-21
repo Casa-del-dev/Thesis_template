@@ -1,29 +1,35 @@
 \begin{titlepage}
-  \noindent
-  \begin{minipage}[t]{.42\textwidth}
+  \vspace*{13mm}
+  \noindent\hspace*{.04\textwidth}%
+  \begin{minipage}[t]{.39\textwidth}
     \vspace{0pt}
     \ifx\thesislogo\empty
     \else
       \includegraphics[width=37mm,height=14mm,keepaspectratio]{\thesislogo}
     \fi
   \end{minipage}\hfill
-  \begin{minipage}[t]{.52\textwidth}
+  \begin{minipage}[t]{.49\textwidth}
     \vspace{0pt}
     \raggedleft\small
     {\bfseries\thesisdepartment\par}
     \thesisgroup\par
+  \end{minipage}\hspace*{.04\textwidth}\par
+
+  \vspace{38mm minus 12mm}
+  \centering
+  \begin{minipage}{.82\textwidth}
+    \centering
+    \Huge\bfseries\thesistitle\par
   \end{minipage}\par
 
-  \vfill
-  \centering
-  {\Huge\bfseries \thesistitle\par}
-  \vspace{1.6cm}
-  {\Large \thesisauthor\par}
-  \vspace{1.1cm}
-  {\large \thesisprogramme\par}
-  \vfill
+  \vspace{14mm minus 4mm}
+  {\Large\bfseries \thesisauthor\par}
+  \vspace{19mm minus 5mm}
+  {\large\bfseries \thesisprogramme\par}
+  \vspace{19mm minus 5mm}
+  {\large\bfseries \thesisdate\par}
 
-  {\large \thesisdate\par}
-  \medskip
-  {\large Supervised by \thesissupervisor\par}
+  \vspace{36mm minus 10mm}
+  {\large \textbf{Supervisor:}\enspace \thesissupervisor\par}
+  \vfill
 \end{titlepage}
