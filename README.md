@@ -17,6 +17,10 @@
 
 ## Organize your chapters
 
+The compiled template contains writing guidance where each part belongs.
+Treat its lengths as starting points and replace the guidance with your own
+thesis text as you draft.
+
 The sample outline follows a design-and-evaluation project. Adapt it to your
 thesis. You can remove or combine the Design, Implementation, User study,
 and Future Work parts if they do not fit. Use the appendix for supplementary
