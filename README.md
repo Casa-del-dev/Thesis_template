@@ -29,30 +29,42 @@ for the overall length and adjust each part to the evidence it needs.
 | --- | --- | --- |
 | Section (`\section`) | A major topic or step in the chapter's argument, such as how you collected and analyzed your data. | About 1–3 pages |
 | Subsection (`\subsection`) | One aspect of the section, such as how you prepared the data. | Several paragraphs, roughly ½–2 pages |
-| Subsubsection (`\subsubsection`) | A focused detail that readers may need to find, such as how you handled missing observations. | About 1–3 paragraphs |
+| Subsubsection (`\subsubsection`) | A rare exception for a substantial topic readers need to find independently. | No fixed length. Fold brief details into the parent subsection. |
 
 Start with paragraphs. Add subsections when a section contains two or more
 distinct topics that readers would benefit from finding by name. If only one
 topic needs a heading or the material fits in a short paragraph, keep it in
-the parent section. Apply the same test before adding subsubsections. For
+the parent section. For
 example, Methods can give data preparation and analysis their own subsections
-when both need explanation. A brief note on missing data can stay in the data
-preparation paragraph.
+when both need explanation.
+
+**Avoid subsubsections by default.** Use a paragraph with a clear opening
+sentence for brief details such as how you handled missing data. Use a
+subsubsection only if the topic needs a substantial, standalone explanation
+that readers will want to find again. Methods keeps one example to show how
+that exception looks.
 
 See the nested example in `chapters/methods.tex`. Subsubsections are
 numbered in the text. To include them in the table of contents, change
 `tocdepth` from 2 to 3 in `main.tex`. The page margins for the thesis text
 are set there by the second `\newgeometry` command.
 
-## Track draft tasks
+## Track draft tasks and supervisor feedback
 
 The `todonotes` package is enabled in `main.tex`. Methods shows
 `\todo{Check fit.}` for a short margin note and
 `\todo[inline]{Verify that the methods give enough detail to reproduce the analysis.}`
-for a longer note in the text. Uncomment `\listoftodos` after the table of
+for a longer note in the text.
+
+Supervisors can write `\chiara{Explain whether missing observations changed the conclusions.}`
+to leave a blue inline comment labeled **Chiara**. Copy the command definition
+in `main.tex` and change the command name, displayed name, and colour to
+add another reviewer.
+
+Uncomment `\listoftodos` after the table of
 contents if you want a checklist. Before submission, resolve your notes and
 uncomment `\PassOptionsToPackage{disable}{todonotes}` to suppress all draft
-notes and the checklist in the PDF.
+notes, reviewer comments, and the checklist in the PDF.
 
 ## Plot data with TikZ and PGFPlots
 
