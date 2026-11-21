@@ -1,114 +1,74 @@
 # Thesis template
 
-## Start your own Overleaf project
+## Start in Overleaf
 
-1. Download the ZIP for the version your course provides. If your course has
-   not specified a version, use **Code → Download ZIP** on GitHub.
-2. In Overleaf, choose **New Project → Upload Project** and upload the ZIP.
-   This creates your own project. If Overleaf asks for the main document,
-   choose `main.tex`. Use pdfLaTeX as the compiler and select **Recompile**.
-3. Set your cover details in `main.tex`. The cover uses the supplied Ethel
-   logo as an example. Set `\thesislogo` to your own PDF or leave it empty
-   to omit the logo. The source artwork is `figures/ethel.svg`.
-   Write your abstract in `front-matter/abstract.tex` and acknowledgements
-   in `front-matter/acknowledgements.tex`.
-4. Replace the sample citations in `chapters/background.tex` and the plot
-   in `chapters/results.tex` with your own material.
+1. Download the ZIP your course provides, or choose **Code → Download ZIP**
+   on GitHub.
+2. In Overleaf, select **New Project → Upload Project** and upload the ZIP.
+   If prompted, select `main.tex` as the main document and pdfLaTeX as the
+   compiler.
+3. Compile once and skim the PDF. The text under each heading explains what
+   a research reader expects and gives a starting length where useful.
+   Replace those passages with your own writing as you draft.
 
-## Organize your chapters
+## Where to work
 
-The compiled template contains writing guidance where each part belongs.
-Treat its lengths as starting points and replace the guidance with your own
-thesis text as you draft.
+| File or folder | What to edit |
+| --- | --- |
+| `main.tex` | Set your cover details and choose which chapters to include. Replace the example Ethel logo via `\thesislogo`, or leave that field empty. |
+| `front-matter/` | Write your abstract and acknowledgements. The PDF starts with the cover and contents, followed by the abstract and acknowledgements. |
+| `chapters/` | Draft your thesis one chapter at a time. Use the Methods file for an example of numbered headings. |
+| `references.bib` | Add your sources and replace the example citations in Related Work. |
+| `figures/` | Store images and edit the sample PGFPlots chart. The original Ethel artwork is `figures/ethel.svg`. |
+| `examples/` | Find the two table examples and the optional statement on AI assistance. |
 
-The sample outline follows a design-and-evaluation project. Adapt it to your
-thesis. You can remove or combine the Design, Implementation, User study,
-and Future Work parts if they do not fit. Use the appendix for supplementary
-material referenced from the main text.
+## While drafting
 
-Use these ranges as drafting estimates. Follow your programme's requirements
-for the overall length and adjust each part to the evidence it needs.
+**Structure.** Use a subsection when two or more distinct topics each need
+their own explanation and heading. Keep the hierarchy shallow and avoid
+subsubsections by default. The sample outline fits a design-and-evaluation
+project. Combine or remove chapters and sections that your research does
+not need.
 
-| Heading | What belongs there | Drafting estimate |
-| --- | --- | --- |
-| Section (`\section`) | A major topic or step in the chapter's argument, such as how you collected and analyzed your data. | About 1–3 pages |
-| Subsection (`\subsection`) | One aspect of the section, such as how you prepared the data. | Several paragraphs, roughly ½–2 pages |
-| Subsubsection (`\subsubsection`) | A rare exception for a substantial topic readers need to find independently. | No fixed length. Fold brief details into the parent subsection. |
+**Tables.** Start with `examples/tables.tex`. Use `tabular` for short columns
+and `tabularx` with an `X` column for text that needs to wrap. The examples
+use `&` to separate cells and `\\` to end rows. Give each table a caption,
+put its `\label` after the caption, and cite it in the text with
+`Table~\ref{tab:example-values}`. Replace the examples or remove the
+`\input{examples/tables}` line in `chapters/results.tex`.
 
-Start with paragraphs. Add subsections when a section contains two or more
-distinct topics that readers would benefit from finding by name. If only one
-topic needs a heading or the material fits in a short paragraph, keep it in
-the parent section. For
-example, Methods can give data preparation and analysis their own subsections
-when both need explanation.
+**Plots.** Edit the coordinates and axis labels in `figures/example-trend.tex`.
+To load measured data, upload a CSV with headers and replace the plot command
+with `\addplot table[x=trial,y=response_ms,col sep=comma] {figures/results.csv};`.
+Use readable axis labels and units.
 
-**Avoid subsubsections by default.** Use a paragraph with a clear opening
-sentence for brief details such as how you handled missing data. Use a
-subsubsection only if the topic needs a substantial, standalone explanation
-that readers will want to find again. Methods keeps one example to show how
-that exception looks.
+**Citations.** Use `\citet{key}` to name an author in the sentence and
+`\citep{key}` for a citation in parentheses. Add records to `references.bib`.
+The bibliography includes the sources cited in the text. Use **Recompile from
+scratch** if an older Overleaf copy still shows stale citations.
 
-See the nested example in `chapters/methods.tex`. Subsubsections are
-numbered in the text. To include them in the table of contents, change
-`tocdepth` from 2 to 3 in `main.tex`. The page margins for the thesis text
-are set there by the second `\newgeometry` command.
+**Draft feedback.** Use `\todo{Check fit.}` in the margin and
+`\todo[inline]{Check the analysis description.}` for a longer note.
+The Methods chapter demonstrates `\gerd{...}` and `\stefan{...}` for named
+reviewer comments. Copy a reviewer definition in `main.tex` to add another
+reviewer. Uncomment `\listoftodos` to collect feedback in a single list.
 
-## Track draft tasks and supervisor feedback
+## Before submitting
 
-The `todonotes` package is enabled in `main.tex`. Methods shows
-`\todo{Check fit.}` for a short margin note and
-`\todo[inline]{Verify that the methods give enough detail to reproduce the analysis.}`
-for a longer note in the text.
+- Replace the writing guidance, sample figures and tables, and example
+  citations. Check your programme's requirements for layout and declarations.
+- Resolve reviewer comments and uncomment
+  `\PassOptionsToPackage{disable}{todonotes}` in `main.tex` to hide draft
+  notes and the checklist. Compile and read through the final PDF.
+- Follow your programme's guidance on disclosing AI assistance. For courses
+  using [Ethel](https://ai.ethz.ch/education/ai4edu/Ethel.html), the optional
+  `examples/ai-assistance.tex` shows how to describe the task and what you
+  checked yourself. Edit the example before enabling it in `main.tex`.
 
-Supervisors can write `\chiara{Explain whether missing observations changed the conclusions.}`
-to leave a blue inline comment labeled **Chiara**. Copy the command definition
-in `main.tex` and change the command name, displayed name, and colour to
-add another reviewer.
+## Maintain the template
 
-Uncomment `\listoftodos` after the table of
-contents if you want a checklist. Before submission, resolve your notes and
-uncomment `\PassOptionsToPackage{disable}{todonotes}` to suppress all draft
-notes, reviewer comments, and the checklist in the PDF.
-
-## Plot data with TikZ and PGFPlots
-
-Open `figures/example-trend.tex` to edit the example coordinates and axis
-labels. For measured data, you can also upload a CSV with column headers
-and replace the plot command with
-`\addplot table[x=trial,y=response_ms,col sep=comma] {figures/results.csv};`.
-Use a descriptive caption, label both axes, and include units where applicable.
-Refer to the plot from the text with `Figure~\ref{fig:example-trend}`.
-
-## Cite and manage sources
-
-Add your records to `references.bib`. Use `\citet{key}` when the author is
-part of the sentence and `\citep{key}` for a citation in parentheses. The
-file includes examples for a journal article, an institutional web page,
-and a book. Use a bare identifier in `doi` and a full address in `url`.
-BibTeX generates the alphabetical reference list from the sources you cite.
-Check your programme's required citation style before submission. If you are
-updating an older Overleaf copy, use **Recompile from scratch** once to
-regenerate the bibliography in the new style.
-
-## Optional example for courses using Ethel
-
-[Ethel](https://ai.ethz.ch/education/ai4edu/Ethel.html) is the ETH AI Center's
-open-source research platform for AI-assisted teaching, learning, and
-assessment. If your course permits it, one possible use is to ask for feedback
-on whether a reader can identify the research question from your introduction.
-Assess the feedback yourself and check any factual claims against your sources.
-
-If your course or programme asks you to disclose AI assistance, follow its
-instructions. The example in `examples/ai-assistance.tex` shows how to describe
-the tool, the task, and what you checked yourself. Adapt it to your actual
-use and uncomment the corresponding input in `main.tex` if the section belongs
-in your submission.
-
-## Maintainer workflow
-
-For a cohort, share a ZIP from a tagged release or a specific commit so students
-all start from the same version. In the linked Overleaf template project, use
-the GitHub integration to pull updates and recompile before sharing a version.
-
-To compile locally, run `latexmk -pdf main.tex` from the repository root. It runs
-pdfLaTeX and BibTeX and produces `main.pdf`.
+Share a ZIP from a specific release or commit so the cohort starts with the
+same files. In the linked Overleaf project, pull GitHub changes and recompile
+before sharing. Overleaf needs only the source files and supporting assets.
+For local builds, use `latexmk -pdf -outdir=/tmp/thesis-build main.tex` to keep
+the PDF and generated files outside the checkout.

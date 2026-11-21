@@ -1,0 +1,40 @@
+\section{Table examples}
+
+Use a compact table to report exact values that readers may want to compare.
+Give units in the heading, align comparable numbers, and put the caption
+above the table. Table~\ref{tab:example-values} shows the first and final
+values from the example plot.
+
+\begin{table}[htbp]
+  \centering
+  \caption{Illustrative response times at the first and final trials.}
+  \label{tab:example-values}
+  \begin{tabular}{lr}
+    \toprule
+    Trial & Response time (ms) \\
+    \midrule
+    First & 340 \\
+    Final & 300 \\
+    \bottomrule
+  \end{tabular}
+\end{table}
+
+When a column needs longer descriptions, use a wrapping column.
+Table~\ref{tab:example-measures} shows how to define measures and give
+enough context for a reader to interpret them.
+
+\begin{table}[htbp]
+  \centering
+  \caption{Example definitions for measures reported in a user study.}
+  \label{tab:example-measures}
+  \begin{tabularx}{\linewidth}{lX}
+    \toprule
+    Measure & Definition \\
+    \midrule
+    Response time & Elapsed time from the appearance of the prompt to the
+      participant's first recorded response, in milliseconds. \\
+    Completion rate & Percentage of trials in which the participant completed
+      the task within the time limit. \\
+    \bottomrule
+  \end{tabularx}
+\end{table}

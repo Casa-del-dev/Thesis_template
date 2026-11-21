@@ -6,6 +6,9 @@
 \usepackage[pass]{geometry}
 \usepackage{titlesec}
 \usepackage{pgfplots}
+\usepackage{booktabs}
+\usepackage{tabularx}
+
 % Uncomment the next line to hide all draft notes for submission.
 % \PassOptionsToPackage{disable}{todonotes}
 \setlength{\marginparwidth}{20mm}
@@ -16,7 +19,7 @@
 
 % Add a command like this for each reviewer who leaves feedback.
 \newcommand{\gerd}[1]{\todo[inline,color=blue!12]{\textbf{Gerd:} #1}}
-\newcommand{\stefan}[2]{\todo[inline,color=green!12]{\textbf{Stefan:} #2}}
+\newcommand{\stefan}[1]{\todo[inline,color=green!12]{\textbf{Stefan:} #1}}
 
 \pgfplotsset{compat=1.18}
 
@@ -73,10 +76,9 @@
 \raggedbottom
 \hypersetup{hidelinks}
 \pagenumbering{roman}
+\tableofcontents
 \input{front-matter/abstract}
 \input{front-matter/acknowledgements}
-
-\tableofcontents
 % \listoftodos % Uncomment to collect draft notes in one place.
 \clearpage
 
